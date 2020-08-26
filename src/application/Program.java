@@ -6,7 +6,6 @@ import java.util.Locale;
 import java.util.Scanner;
 
 import entities.Product;
-import util.ProductPredicate;
 
 public class Program {
 
@@ -21,7 +20,7 @@ public class Program {
 		list.add(new Product("Tablet", 350.00));
 		list.add(new Product("HD Case", 80.00));
 		
-		list.removeIf(new ProductPredicate());
+		list.removeIf(Product::staticProductPredicate);
 		
 		for(Product p : list) {
 			System.out.println(p);
